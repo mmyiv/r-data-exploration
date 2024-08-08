@@ -1,0 +1,49 @@
+---
+title: "r-data-exploration"
+author: "mish"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+# load libraries
+library(tidyverse)
+library(GGally)
+library(skimr)
+```
+
+```{r}
+# view diamonds
+view(diamonds)
+```
+
+```{r}
+# explore data set
+names(diamonds)
+dim(diamonds)
+summary(diamonds)
+head(diamonds)
+tail(diamonds)
+skimr::skim(diamonds)
+```
+
+```{r}
+# pairs plot
+GGally::ggpairs(diamonds)
+```
+
+```{r}
+# scatter plot
+ggplot(data=(diamonds), aes(x=carat, y=price)) + geom_point()
+```
+
+```{r}
+# histogram
+ggplot(data=diamonds, aes(x=carat)) + geom_histogram()
+
+# box plot
+ggplot(data=diamonds, aes(x=clarity, y=price)) + geom_boxplot()
+
+```
+
